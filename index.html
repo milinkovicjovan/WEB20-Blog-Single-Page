@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+    body {
+      font-family: "Poppins", sans-serif;
+    }
+    .hero-section {
+      background-image: url(assets/bg\ top.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 0 10px;
+      padding-left: 30px;
+      min-height: 400px;
+    }
+
+    .hero-section__wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 400px;
+      width: 100%;
+    }
+
+    .hero-text__box {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .hero-text__heading {
+      color: #eab663;
+      font-size: 48px;
+    }
+    .hero-text__description {
+      color: #fff;
+      font-size: 22px;
+      text-align: center;
+    }
+
+    .hero-social-media {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .hero-social-media img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .content-section {
+      display: flex;
+      flex-direction: row;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 50px;
+    }
+
+    .sidebar {
+      width: 25%;
+      padding: 20px;
+    }
+    .sidebar-text,
+    .sidebar-images {
+      background: #f4f4f4;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+    }
+
+    .sidebar-images {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .sidebar-images h3 {
+      margin-bottom: 20px;
+    }
+
+    .sidebar-cta.desktop-only {
+      display: block;
+      background-color: #2b357d;
+      color: #fff;
+      min-height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .sidebar-cta.mobile-only {
+      display: none;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+    }
+    .sidebar ul li {
+      margin-bottom: 5px;
+      margin-left: 25px;
+    }
+    .sidebar ul li a {
+      text-decoration: none;
+      color: #007bff;
+    }
+    .sidebar img {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .sidebar-images.desktop-only {
+      display: block;
+    }
+    .sidebar-images.mobile-only {
+      display: none;
+    }
+    .bullet-heading {
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .bullet-heading::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: black;
+      font-size: 1.5em;
+    }
+
+    .content {
+      width: 75%;
+      padding: 20px 20px 20px 50px;
+    }
+    .content-main-heading {
+      font-size: 48px;
+      margin: 50px 0 !important;
+    }
+    .content h2 {
+      margin-top: 0;
+    }
+    .content p {
+      margin-bottom: 50px;
+    }
+    .form-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: #000;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .form-heading {
+      color: #fff;
+      font-size: 35px;
+    }
+    .form-description {
+      color: #fff;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+      font-size: 16px;
+      color: #333;
+    }
+
+    input[type="text"]::placeholder,
+    input[type="email"]::placeholder {
+      color: #aaa;
+    }
+
+    button.footer-submit-button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #e86655;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      text-align: left;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .part-text-form {
+      display: flex;
+      flex-direction: row;
+      margin-right: 30px;
+      align-items: center;
+    }
+    .part-text {
+      margin-right: 30px;
+    }
+    .part-form {
+      display: flex;
+      flex-direction: column;
+    }
+    .faqs-section {
+      max-width: 1200px;
+      margin: 100px auto;
+    }
+    .faq-heading {
+      font-size: 36px;
+      text-align: center;
+    }
+    .faq-container {
+      margin: 0 auto;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 10px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #333;
+      border-left: 10px #f2847c solid;
+    }
+
+    .faq-question img {
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-question.open img {
+      transform: rotate(90deg);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 20px;
+      color: #555;
+      line-height: 1.5;
+      background-color: #e4e4e4;
+    }
+    @media (max-width: 768px) {
+      .content-main-heading {
+        font-size: 30px;
+      }
+      .sidebar {
+        display: none;
+      }
+      .sidebar-cta.desktop-only {
+        display: none;
+      }
+      .sidebar-cta.mobile-only {
+        display: block;
+        background-color: #2b357d;
+        color: #fff;
+        min-height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      }
+      .sidebar-images.desktop-only {
+        display: none;
+      }
+      .sidebar-images.mobile-only {
+        display: block;
+      }
+
+      .grid-item {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 5px;
+      }
+
+      .grid-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+
+      .content-section {
+        padding-top: 0;
+      }
+
+      .content {
+        width: 100%;
+        padding: 20px;
+      }
+
+      .form-section {
+        flex-direction: column-reverse;
+      }
+      .part-text-form {
+        flex-direction: column;
+        margin: 20px;
+        align-items: normal;
+      }
+      .form-heading {
+        font-size: 26px;
+      }
+      .part-text {
+        margin-right: 0;
+      }
+      .faqs-section {
+        margin-top: 20px;
+      }
+      .faq-container {
+        margin-top: 20px;
+      }
+    }
+  </style>
+  <body>
+    <section>
+      <div class="hero-section">
+        <div class="hero-section__wrapper">
+          <div class="hero-text__box">
+            <div>
+              <h1 class="hero-text__heading">BLOG POST TITLE</h1>
+              <p class="hero-text__description">
+                Last Updated: November 5, 2024
+              </p>
+              <div class="hero-social-media">
+                <img src="assets/share-icon.png" />
+                <img src="assets/fb-icon.png" />
+                <img src="assets/x-icon.png" />
+                <img src="assets/linkedin-icon.png" />
+                <img src="assets/pinterest-icon.png" />
+                <img src="assets/email-icon.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar-cta mobile-only">
+        <h3>RESC CTA</h3>
+      </div>
+      <div class="content-section">
+        <div class="sidebar">
+          <div class="sidebar-cta desktop-only">
+            <h3>RESC CTA</h3>
+          </div>
+          <div class="sidebar-text">
+            <h3 class="bullet-heading">Heading 2</h3>
+            <ul>
+              <li><a href="#">Link 1</a></li>
+              <li><a href="#">Link 2</a></li>
+              <li><a href="#">Link 3</a></li>
+            </ul>
+
+            <h3 class="bullet-heading">Heading 2</h3>
+            <ul>
+              <li><a href="#">Link 1</a></li>
+              <li><a href="#">Link 2</a></li>
+              <li><a href="#">Link 3</a></li>
+            </ul>
+            <h3 class="bullet-heading">Heading 2</h3>
+            <ul>
+              <li><a href="#">Link 1</a></li>
+              <li><a href="#">Link 2</a></li>
+              <li><a href="#">Link 3</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-images desktop-only">
+            <h3>RELATED RESOURCES</h3>
+            <img
+              src="assets/dummy_200x150_ffffff_cccccc.png"
+              alt="Placeholder Image 1"
+            />
+            <img
+              src="assets/dummy_200x150_ffffff_cccccc.png"
+              alt="Placeholder Image 2"
+            />
+            <img
+              src="assets/dummy_200x150_ffffff_cccccc.png"
+              alt="Placeholder Image 3"
+            />
+            <img
+              src="assets/dummy_200x150_ffffff_cccccc.png"
+              alt="Placeholder Image 3"
+            />
+          </div>
+        </div>
+
+        <div class="content">
+          <h2 class="content-main-heading">CALL OUT SENTENCE</h2>
+
+          <h2>Heading 2</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto
+            animi doloribus quos nesciunt earum ipsam ut voluptates temporibus
+            ipsa odit nostrum modi, eveniet quas veniam, natus expedita id vitae
+            laboriosam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Necessitatibus, architecto ut! Tempora, aspernatur quidem!
+            Perspiciatis praesentium, tenetur fugit, odit nulla dolorum labore
+            numquam amet mollitia, libero expedita tempore temporibus quo? Lorem
+            ipsum dolor sit amet consectetur, adipisicing elit. Architecto animi
+            doloribus quos nesciunt earum ipsam ut voluptates temporibus ipsa
+            odit nostrum modi, eveniet quas veniam, natus expedita id vitae
+            laboriosam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Necessitatibus, architecto ut! Tempora, aspernatur quidem!
+            Perspiciatis praesentium, tenetur fugit, odit nulla dolorum labore
+            numquam amet mollitia, libero expedita tempore temporibus quo?
+          </p>
+
+          <h2>Heading 3</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto
+            animi doloribus quos nesciunt earum ipsam ut voluptates temporibus
+            ipsa odit nostrum modi, eveniet quas veniam, natus expedita id vitae
+            laboriosam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Necessitatibus, architecto ut! Tempora, aspernatur quidem!
+            Perspiciatis praesentium, tenetur fugit, odit nulla dolorum labore
+            numquam amet mollitia, libero expedita tempore temporibus quo? Lorem
+            ipsum dolor sit amet consectetur, adipisicing elit. Architecto animi
+            doloribus quos nesciunt earum ipsam ut voluptates temporibus ipsa
+            odit nostrum modi, eveniet quas veniam, natus expedita id vitae
+            laboriosam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Necessitatibus, architecto ut! Tempora, aspernatur quidem!
+            Perspiciatis praesentium, tenetur fugit, odit nulla dolorum labore
+            numquam amet mollitia, libero expedita tempore temporibus quo?
+          </p>
+          <img src="assets/dummy_1200x400_ffffff_cccccc.png" />
+          <p style="margin-top: 50px">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto
+            animi doloribus quos nesciunt earum ipsam ut voluptates temporibus
+            ipsa odit nostrum modi, eveniet quas veniam, natus expedita id vitae
+            laboriosam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Necessitatibus, architecto ut! Tempora, aspernatur quidem!
+            Perspiciatis praesentium, tenetur fugit, odit nulla dolorum labore
+            numquam amet mollitia, libero expedita tempore temporibus quo? Lorem
+            ipsum dolor sit amet consectetur, adipisicing elit. Architecto animi
+            doloribus quos nesciunt earum ipsam ut voluptates temporibus ipsa
+            odit nostrum modi, eveniet quas veniam, natus expedita id vitae
+            laboriosam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Necessitatibus, architecto ut! Tempora, aspernatur quidem!
+            Perspiciatis praesentium, tenetur fugit, odit nulla dolorum labore
+            numquam amet mollitia, libero expedita tempore temporibus quo?
+          </p>
+          <img src="assets/dummy_1200x400_ffffff_cccccc.png" />
+          <p style="margin-top: 50px">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto
+            animi doloribus quos nesciunt earum ipsam ut voluptates temporibus
+            ipsa odit nostrum modi, eveniet quas veniam, natus expedita id vitae
+            laboriosam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Necessitatibus, architecto ut! Tempora, aspernatur quidem!
+            Perspiciatis praesentium, tenetur fugit, odit nulla dolorum labore
+            numquam amet mollitia, libero expedita tempore temporibus quo? Lorem
+            ipsum dolor sit amet consectetur, adipisicing elit. Architecto animi
+            doloribus quos nesciunt earum ipsam ut voluptates temporibus ipsa
+            odit nostrum modi, eveniet quas veniam, natus expedita id vitae
+            laboriosam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Necessitatibus, architecto ut! Tempora, aspernatur quidem!
+            Perspiciatis praesentium, tenetur fugit, odit nulla dolorum labore
+            numquam amet mollitia, libero expedita tempore temporibus quo?
+          </p>
+        </div>
+      </div>
+      <div class="sidebar-images mobile-only">
+        <h3>RELATED RESOURCES</h3>
+        <div class="grid-item">
+          <img
+            src="assets/dummy_200x150_ffffff_cccccc.png"
+            alt="Placeholder Image 1"
+          />
+          <img
+            src="assets/dummy_200x150_ffffff_cccccc.png"
+            alt="Placeholder Image 2"
+          />
+          <img
+            src="assets/dummy_200x150_ffffff_cccccc.png"
+            alt="Placeholder Image 3"
+          />
+          <img
+            src="assets/dummy_200x150_ffffff_cccccc.png"
+            alt="Placeholder Image 3"
+          />
+        </div>
+      </div>
+      <div class="form-section">
+        <div>
+          <img src="/assets/Mad-Scientist-1.png" />
+        </div>
+        <div class="part-text-form">
+          <div class="part-text">
+            <h3 class="form-heading">DON'T GUESS AT SEO</h3>
+            <p class="form-description">
+              Know what works with Real-World SEO testing
+            </p>
+          </div>
+          <div class="part-form">
+            <input type="text" id="name" name="name" placeholder="Your Name" />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your Email"
+            />
+            <button class="footer-submit-button">SUBMIT</button>
+          </div>
+        </div>
+      </div>
+      <div class="faqs-section">
+        <h3 class="faq-heading">FREQUENTLY ASKED QUESTIONS</h3>
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question">
+              <span
+                >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et
+                placeat enim consequatur eveniet,</span
+              >
+              <img src="assets/arrow-icon.png" alt="Arrow" />
+            </div>
+            <div class="faq-answer">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et
+              placeat enim consequatur eveniet, esse explicabo sint accusantium
+              repellat quisquam libero tempora natus itaque, velit doloremque?
+              Suscipit ullam vitae quod nostrum.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span
+                >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et
+                placeat enim consequatur eveniet,</span
+              >
+              <img src="assets/arrow-icon.png" alt="Arrow" />
+            </div>
+            <div class="faq-answer">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et
+              placeat enim consequatur eveniet, esse explicabo sint accusantium
+              repellat quisquam libero tempora natus itaque, velit doloremque?
+              Suscipit ullam vitae quod nostrum.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span
+                >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et
+                placeat enim consequatur eveniet,</span
+              >
+              <img src="assets/arrow-icon.png" alt="Arrow" />
+            </div>
+            <div class="faq-answer">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et
+              placeat enim consequatur eveniet, esse explicabo sint accusantium
+              repellat quisquam libero tempora natus itaque, velit doloremque?
+              Suscipit ullam vitae quod nostrum.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span
+                >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et
+                placeat enim consequatur eveniet,</span
+              >
+              <img src="assets/arrow-icon.png" alt="Arrow" />
+            </div>
+            <div class="faq-answer">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et
+              placeat enim consequatur eveniet, esse explicabo sint accusantium
+              repellat quisquam libero tempora natus itaque, velit doloremque?
+              Suscipit ullam vitae quod nostrum.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      const faqQuestions = document.querySelectorAll(".faq-question");
+
+      faqQuestions.forEach((question) => {
+        question.addEventListener("click", () => {
+          const answer = question.nextElementSibling;
+          const isOpen = answer.style.display === "block";
+
+          document
+            .querySelectorAll(".faq-answer")
+            .forEach((a) => (a.style.display = "none"));
+          document
+            .querySelectorAll(".faq-question")
+            .forEach((q) => q.classList.remove("open"));
+
+          if (!isOpen) {
+            answer.style.display = "block";
+            question.classList.add("open");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
